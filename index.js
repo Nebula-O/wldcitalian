@@ -9,12 +9,56 @@ Object.keys(botCommands).map(key => {
 });
 
 const TOKEN = process.env.TOKEN;
+const DBASE = process.env.DBASE;
+const DBUNAME = process.env.DBUNAME;
+const DBPASSWD = process.env.DBPASSWD;
+const DBHOST = process.env.DBHOST;
+/*
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: DBHOST,
+  user: DBUNAME,
+  password: DBPASSWD
+});
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("MySQL Connected!");
+});
+
+function querySql(str){
+  con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("Result: " + result);
+      return result;
+    });
+  }); 
+}*/
 
 bot.login(TOKEN);
-
 bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
+  bot.user.setActivity('italian!',{ type : 'LISTENING' });
 });
+
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.on('line', inputStr => {
+  if(inputStr.startsWith("s.")){
+    var details = inputStr.split(',');
+    details[0] = details[0].replace("s.","");
+    const channel = bot.channels.get(bot.user.client.channels.find(bot.channels.find(channel => channel.name === details[0]).id));
+    channel.send(inputStr.substring(details[0].length+1,inputStr.length));
+    readline.close();
+  }
+});
+
 
 bot.on('message', msg => {
   const args = msg.content.split(/ +/);
@@ -27,6 +71,6 @@ bot.on('message', msg => {
     bot.commands.get(command).execute(msg, args);
   } catch (error) {
     console.error(error);
-    msg.reply('there was an error trying to execute that command!');
+    msg.reply('An error occured while trying to execute that command!');
   }
 });
