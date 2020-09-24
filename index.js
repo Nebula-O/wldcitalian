@@ -75,28 +75,10 @@ bot.on('message', msg => {
   const command = args.shift().toLowerCase();
   console.info(`Called command: ${command}`);
 
-  if (!bot.commands.has(command) && (!command.startsWith(".tren") || !command.startsWith(".trit"))) return;
+  if (!bot.commands.has(command)) return;
 
   try {
-    if(msg.content.startsWith(".tren "))
-    {
-      var sep = msg.substring((".tren ").length, msg.length);// ".tren " has the same length as ".trit "
-      var googleTranslate = require('google-translate')(apiKey, options);
-      googleTranslate.translate(sep, "it", function(err, translation) {
-        console.log("Translated " + sep + " to " + translation.translatedText);
-        msg.reply(translation.translatedText);
-      });
-    }
-    if(msg.content.startsWith(".trit "))
-    {
-      var sep = msg.substring((".tren ").length, msg.length);// ".tren " has the same length as ".trit "
-      var googleTranslate = require('google-translate')(apiKey, options);
-      googleTranslate.translate(sep, "en", function(err, translation) {
-        console.log("Translated " + sep + " to " + translation.translatedText);
-        msg.reply(translation.translatedText);
-      });
-    }
-    else bot.commands.get(command).execute(msg, args);
+    bot.commands.get(command).execute(msg, args);
   } catch (error) {
     console.error(error);
     msg.reply('An error occured while trying to execute that command!');
