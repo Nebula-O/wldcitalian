@@ -13,6 +13,7 @@ const DBASE = process.env.DBASE;
 const DBUNAME = process.env.DBUNAME;
 const DBPASSWD = process.env.DBPASSWD;
 const DBHOST = process.env.DBHOST;
+const DBPORT = process.env.DBPORT;
 
 let mysql = require('mysql');
 
@@ -20,7 +21,8 @@ let con = mysql.createConnection({
   host: DBHOST,
   database: DBASE,
   user: DBUNAME,
-  password: DBPASSWD
+  password: DBPASSWD,
+  port: DBPORT
 });
 con.connect(function(err) {
   if (err) throw err;
