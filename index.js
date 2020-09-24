@@ -75,7 +75,7 @@ bot.on('message', msg => {
   const command = args.shift().toLowerCase();
   console.info(`Called command: ${command}`);
 
-  if (!bot.commands.has(command) || !command.startsWith(".translate")) return;
+  if (!bot.commands.has(command) && (!command.startsWith(".tren") || !command.startsWith(".trit"))) return;
 
   try {
     if(command.startsWith(".tren ")) translate(command, "it");
