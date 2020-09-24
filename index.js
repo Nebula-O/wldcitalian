@@ -15,9 +15,10 @@ const DBPASSWD = process.env.DBPASSWD;
 const DBHOST = process.env.DBHOST;
 const DBPORT = process.env.DBPORT;
 
-let mysql = require('mysql');
+var mysql = require('mysql');
 
-let con = mysql.createConnection({
+var con = mysql.createConnection({
+
   host: DBHOST,
   database: DBASE,
   user: DBUNAME,
