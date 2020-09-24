@@ -14,7 +14,7 @@ const DBUNAME = process.env.DBUNAME;
 const DBPASSWD = process.env.DBPASSWD;
 const DBHOST = process.env.DBHOST;
 const DBPORT = process.env.DBPORT;
-
+/*
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -23,12 +23,12 @@ var con = mysql.createConnection({
   user: DBUNAME,
   password: DBPASSWD,
 });
-con.connect();
+var con = mysql.createConnection('mysql://"user":pass@host/db?debug=true&charset=BIG5_CHINESE_CI&timezone=-0700')
 /*con.connect(function(err) {
   if (err) throw err;
   console.log("MySQL Connected!");
 });
-*/
+
 function querySql(str){
   con.connect(function(err) {
     if (err) throw err;
@@ -40,7 +40,7 @@ function querySql(str){
     });
   }); 
 }
-
+*/
 bot.login(TOKEN);
 bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
