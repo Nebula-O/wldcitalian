@@ -61,7 +61,6 @@ readline.on('line', inputStr => {
 
 function translate(msg, lang) {
 
-  msg.channel.send('Translating...');
   var sep = msg.substring((".tren ").length, msg.length);// ".tren " has the same length as ".trit "
   var googleTranslate = require('google-translate')(apiKey, options);
   googleTranslate.translate(sep, lang, function(err, translation) {
