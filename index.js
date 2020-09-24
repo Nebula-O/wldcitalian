@@ -65,7 +65,7 @@ function translate(msg, lang) {
   var googleTranslate = require('google-translate')(apiKey, options);
   googleTranslate.translate(sep, lang, function(err, translation) {
     console.log("Translated " + sep + " to " + translation.translatedText);
-    msg.reply(translation.translatedText);
+    return translation.translatedText;
   });
 
 }
@@ -78,8 +78,8 @@ bot.on('message', msg => {
   if (!bot.commands.has(command) && (!command.startsWith(".tren") || !command.startsWith(".trit"))) return;
 
   try {
-    if(command.startsWith(".tren ")) translate(command, "it");
-    if(command.startsWith(".trit ")) translate(command, "en");
+    if(command.startsWith(".tren ")) msg.reply(translate(command, "it"));
+    if(command.startsWith(".trit ")) msg.reply(translate(command, "en"));
     bot.commands.get(command).execute(msg, args);
   } catch (error) {
     console.error(error);
