@@ -18,18 +18,17 @@ const DBPORT = process.env.DBPORT;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-
   host: DBHOST,
   database: DBASE,
   user: DBUNAME,
   password: DBPASSWD,
-  port: DBPORT,
 });
-con.connect(function(err) {
+con.connect();
+/*con.connect(function(err) {
   if (err) throw err;
   console.log("MySQL Connected!");
 });
-
+*/
 function querySql(str){
   con.connect(function(err) {
     if (err) throw err;
