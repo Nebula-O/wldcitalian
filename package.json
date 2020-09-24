@@ -13,6 +13,7 @@
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "google-translate": "^3.0.0",
-    "googleapis": "^60.0.1"
+    "googleapis": "^60.0.1",
+    "mysql": "^2.18.1"
   }
 }
