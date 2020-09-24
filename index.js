@@ -20,7 +20,6 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
 
   host: DBHOST,
-  database: DBASE,
   user: DBUNAME,
   password: DBPASSWD,
   port: DBPORT
