@@ -14,9 +14,9 @@ const DBUNAME = process.env.DBUNAME;
 const DBPASSWD = process.env.DBPASSWD;
 const DBHOST = process.env.DBHOST;
 
-var mysql = require('mysql');
+let mysql = require('mysql');
 
-var con = mysql.createConnection({
+let con = mysql.createConnection({
   host: DBHOST,
   database: DBASE,
   user: DBUNAME,
