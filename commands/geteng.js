@@ -20,8 +20,8 @@ module.exports = {
             });
         } catch (err) {
             console.error(err);
+            msg.channel.send("- *Error*");
         }
-        msg.channel.send("- *Error*: "+word+" is not recognised as an italian word. -");
     },
   };
   
