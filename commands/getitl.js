@@ -11,14 +11,13 @@ module.exports = {
             const lines = data.split(/\r?\n/);
             var layout;
             
+            var words = args;
             var word = '';
-            var i = 0;
-            args.forEach((word) => {
-                word = word.concat(word + ' ');
-                i++;
-            });
-            if(i > 1){
-                word = word.replace(word.lastIndexOf(' '), '');
+            for(var wd in words) {
+                word.concat(wd + ' ');
+            }
+            if(w.endsWith(' ')){
+                w = w.substring(0, w.length - 1);
             }
 
             // print all lines

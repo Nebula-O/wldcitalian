@@ -4,7 +4,16 @@ module.exports = {
     execute(msg, args) {
 
         var words = args;
-
+        var w = '';
+        for(var wd in words) {
+            w.concat(wd + ' ');
+        }
+        if(w.endsWith(' ')){
+            w = w.substring(0, w.length - 1);
+        }
+        var itl = w.split('=')[0];
+        var eng = w.split('=')[1];
+/*
         var eng = words[0].split('=');
         var itl = '';
         var i = 0;
@@ -14,7 +23,7 @@ module.exports = {
         });
         if(i > 1){
             itl.replace(itl.lastIndexOf(' '), '');
-        }
+        }*/
 
         // SAVE WORD
         console.log('Saving word ( 0% ) ('+itl+'='+eng+') ...');
@@ -25,7 +34,7 @@ module.exports = {
         });
 
         
-        msg.channel.send('Saved. **I: **'+itl+' = **E: **'+eng);
+        msg.channel.send('Saved. **It: **'+itl+' = **En: **'+eng);
     },
   };
   

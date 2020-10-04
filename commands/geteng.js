@@ -5,7 +5,16 @@ module.exports = {
 
         const fs = require('fs');
         try {
-            var word = args[0];
+
+            var words = args;
+            var word = '';
+            for(var wd in words) {
+                word.concat(wd + ' ');
+            }
+            if(w.endsWith(' ')){
+                w = w.substring(0, w.length - 1);
+            }
+
             // read contents of the file
             const data = fs.readFileSync('words.txt', 'UTF-8');
             // split the contents by new line
