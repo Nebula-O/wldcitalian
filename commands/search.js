@@ -33,14 +33,22 @@ module.exports = {
           var done= false;
           var splitLn = line.split('=');
           var lang = 'English';
+          var ignore = false;
           splitLn.forEach((str) => {//console.log('prfx check detected');
             if(str.startsWith(prfx)){//console.log('= detected');
               //console.log('replyStr = '+replyStr);
               if(splitLn[0]==splitLn[1]){
                 lang = "English & Italian";
+                if(!ignore) ignore = true;
               }
-              else if(str == splitLn[0]) lang = 'Italian';
-              replyStr += (' `' + str + '` (*'+lang+'*), ');
+              else if(str == splitLn[0]){
+                lang = 'Italian';
+              }
+              if(!(lang == 'Italian' && ignore)){
+                replyStr += (' `' + str + '` (*'+lang+'*), ');
+              }else{
+                ignore = false;
+              }
               done = true;
               lang = 'English';
               //console.log('replyStr = '+replyStr);
