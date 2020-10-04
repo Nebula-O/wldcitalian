@@ -29,7 +29,7 @@ module.exports = {
             var wordSplit = theWord.split('=');
 
             if(Math.random() >= 0.5){
-                msg.channel.send('**||'+wordSplit[0]+'||** = '+wordSplit[1]+'`');
+                msg.channel.send('**||'+wordSplit[0]+'||** = `'+wordSplit[1]+'`');
             } else {
                 msg.channel.send('`'+wordSplit[0]+'` = **||'+wordSplit[1]+'||**');
             }
