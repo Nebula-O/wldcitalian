@@ -32,18 +32,17 @@ module.exports = {
     for(word in allWords){
       if(word.includes('=')){
         if(word.split('=')[0].startsWith(prefix)){
-          words.push(word);
+          word = word.replaceAll('=', ' = ');
+          replyStr = replyStr.concat(' `' + word + '`, ');
         }
 
         else if(word.split('=')[1].startsWith(prefix)){
-          words.push(word);
+          word = word.replaceAll('=', ' = ');
+          replyStr = replyStr.concat(' `' + word + '`, ');
         }
       }
     }
     
-    for(word in words){
-      replyStr = replyStr.concat(' `' + word.replaceAll('=', ' = ') + '`, ');
-    }
     if(allWords.length < 1){
       msg.channel.send('No words found.');
     }else{
