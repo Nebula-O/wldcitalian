@@ -6,7 +6,7 @@ module.exports = {
         var words = args;
         var w = '';
         for(var wd in words) {
-            w = w.concat(wd + ' ');
+            w = w.concat(args[wd] + ' ');
         }
         if(w.endsWith(' ')){
             w = w.substring(0, w.length - 1);
