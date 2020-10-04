@@ -8,7 +8,7 @@ module.exports = {
     var replyStr = '';
 
 
-    var allWords = new Array();
+    var allWords = [];
     const fs = require('fs');
     try {
         // read contents of the file
@@ -18,7 +18,7 @@ module.exports = {
         var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
-          allWords.add(line);
+          allWords.push(line);
         });
         return words;
     } catch (err) {
