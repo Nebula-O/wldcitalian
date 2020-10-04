@@ -13,9 +13,9 @@ module.exports = {
             const lines = data.split(/\r?\n/);
             var layout;
             // print all lines
-            var words;
+            var words = [];
             lines.forEach((line) => {// do something with each line
-                words.add(line);
+                words.push(line);
             });
             // -
             // PICK A RANDOM WORD
