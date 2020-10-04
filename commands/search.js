@@ -5,7 +5,7 @@ module.exports = {
   description: 'Search!',
   execute(msg, args) {
 
-    var replyStr = '';
+    var replyStr = 'Words found:\n';
 
 
     var allWords = [];
@@ -18,9 +18,7 @@ module.exports = {
         var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
-          if(line.includes('=')) {
-            allWords.push(line);
-          }
+          allWords.push(line);
         });
     } catch (err) {
         console.error(err);
