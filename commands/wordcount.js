@@ -10,8 +10,8 @@ module.exports = {
             // split the contents by new line
             const lines = data.split(/\r?\n/);
             var layout;
-            
-            var num;
+
+            var num = 0;
             lines.forEach((line) => {// do something with each line
               if(line.length > 2){
                   num++;
