@@ -41,9 +41,9 @@ module.exports = {
         //const lines = data.split(/\r?\n/);
         //var layout;
         // print all lines
-        lines.forEach((line) => {// do something with each line
-          allWords.push(line);
-        });
+        //lines.forEach((line) => {// do something with each line
+          //allWords.push(line);
+        //});
     } catch (err) {
         console.error(err);
     }
@@ -51,10 +51,9 @@ module.exports = {
 
 
     var words = [];
-    const prefix = args;
+    const prefix = args[0];
 
     for(word in allWords){
-      if(word.includes('=')){
         if(word.split('=')[0].startsWith(prefix)){
           word = word.replaceAll('=', ' = ');
           replyStr = replyStr.concat(' `' + word + '`, ');
