@@ -77,7 +77,7 @@ bot.on('message', msg => {
       const fs = require('fs');
       const content = fs.readFileSync('words.txt', 'utf-8');
       const attatchment = new Discord.Attachment('words.txt');
-      msg.channel.send(message.author, attatchment);
+      msg.channel.send(msg.author, attatchment);
     }
   } catch (error) {
     console.error(error);
