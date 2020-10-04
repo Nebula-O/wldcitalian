@@ -27,6 +27,7 @@ module.exports = {
             // OUTPUT THE RANDOM WORD CHOSEN
             var wordSplit = theWord.split('=');
 
+            msg.delete(1000);
             msg.channel.send('**||'+wordSplit[0]+'||** = `'+wordSplit[1]+'`');
 
         } catch (err) {
