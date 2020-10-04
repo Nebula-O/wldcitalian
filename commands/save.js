@@ -13,6 +13,9 @@ module.exports = {
         }
         var itl = w.split('=')[0];
         var eng = w.split('=')[1];
+        if(eng.startsWith(' ')){
+            w = w.substring(1, w.length);
+        }
 /*
         var eng = words[0].split('=');
         var itl = '';
