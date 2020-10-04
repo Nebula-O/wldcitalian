@@ -53,7 +53,7 @@ module.exports = {
     var words = [];
     const prefix = args[0];
 
-    for(word in allWords){
+    for(var word in allWords){
         if(word.split('=')[0].startsWith(prefix)){
           word = word.replaceAll('=', ' = ');
           replyStr = replyStr.concat(' `' + word + '`, ');
