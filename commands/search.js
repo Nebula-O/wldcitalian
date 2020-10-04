@@ -5,7 +5,7 @@ module.exports = {
   description: 'Search!',
   execute(msg, args) {
 
-    var replyStr = 'Words found: ```\n```';
+    var replyStr = 'Words found:  ';
 
 
     var allWords = [];
@@ -42,7 +42,7 @@ module.exports = {
     }
     
     for(word in words){
-      replyStr = replyStr.concat(' `' + word.replaceAll('=', ' = ') + '`, ```\n```');
+      replyStr = replyStr.concat(' `' + word.replaceAll('=', ' = ') + '`, ');
     }
     if(allWords.length < 1){
       msg.channel.send('No words found.');
