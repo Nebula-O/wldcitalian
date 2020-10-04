@@ -51,11 +51,11 @@ module.exports = {
 
 
     var words = [];
-    const prefix = args;
+    var prfx = args[0];
 
     for(var word in allWords){
-      var substrings = word.split('=').forEach((str) => {
-        if(str.startsWith(prefix)){
+      word.split('=').forEach((str) => {
+        if(str.startsWith(prfx)){
           //word = word.replaceAll('=', ' = ');
           replyStr = replyStr.concat(' `' + word + '`, ');
         }

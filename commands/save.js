@@ -5,7 +5,7 @@ module.exports = {
 
         var words = args;
 
-        var eng = words[0];
+        var eng = words[0].split('=');
         var itl = words[1];
 
         // SAVE WORD
