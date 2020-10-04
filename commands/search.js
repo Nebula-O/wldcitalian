@@ -33,8 +33,10 @@ module.exports = {
 
           line.split('=').forEach((str) => {console.log('prfx check detected');
             if(str.startsWith(prfx)){console.log('= detected');
+              console.log('replyStr = '+replyStr);
               var word = str.replace('=', ' = ');
-              replyStr += (' `' + word + '`, ');
+              replyStr = replyStr + (' `' + word + '`, ');
+              console.log('replyStr = '+replyStr);
             }
           });
 
