@@ -33,8 +33,8 @@ module.exports = {
           var done= false;
           var splitLn = line.split('=');
           var lang = 'English';
-          splitLn.forEach((str) => {console.log('prfx check detected');
-            if(str.startsWith(prfx)){console.log('= detected');
+          splitLn.forEach((str) => {//console.log('prfx check detected');
+            if(str.startsWith(prfx)){//console.log('= detected');
               //console.log('replyStr = '+replyStr);
               if(splitLn[0]==splitLn[1]){
                 lang = "English & Italian";
@@ -53,9 +53,13 @@ module.exports = {
       rl.on('close', function(line) {
           //console.log('Total lines : ' + line_no);
           if(replyStr.length < 14){
-            msg.channel.send('No words found.');
-          }else{
+            msg.channel.send('No match(es) found.');
+          }else if(replyStr.length <= 2000){
             msg.channel.send(replyStr);
+          }
+          else if((replyStr.length) <= 4000) {
+            msg.channel.send(replyStr.substring(0, replyStr.length / 2));
+            msg.channel.send(replyStr.substring((replyStr.length / 2) + 1, replyStr.length));
           }
       });
 
