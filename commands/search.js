@@ -26,17 +26,17 @@ module.exports = {
 
 
 
-    var words;
+    var words = [];
     const prefix = args[0];
 
     for(word in allWords){
       if(word.includes('=')){
         if(word.split('=')[0].startsWith(prefix)){
-          words.add(word);
+          words.push(word);
         }
 
         else if(word.split('=')[1].startsWith(prefix)){
-          words.add(word);
+          words.push(word);
         }
       }
     }
