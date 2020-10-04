@@ -5,6 +5,15 @@ module.exports = {
         
         const fs = require('fs');
         try {
+
+            var word = '';
+            for(var wd in args) {
+                word = word.concat(args[wd] + ' ');
+            }
+            if(word.endsWith(' ')){
+                word = word.substring(0, word.length - 1);
+            }
+
             // read contents of the file
             const data = fs.readFileSync('words.txt', 'UTF-8');
             // split the contents by new line
@@ -13,8 +22,8 @@ module.exports = {
             // print all lines
             var words = '__(Spoiler on italian words)__';
             lines.forEach((line) => {// do something with each line
-                if(line.length > 2){
-                    lineRep = line.split('=');
+                lineRep = line.split('=');
+                if(line.length > 2 && (lineRep[0].toLowerCase() === word.toLowerCase())){
                     words = words.concat('\n`'+lineRep[0]+'` = **||'+lineRep[1]+"||**");
                 }
             });

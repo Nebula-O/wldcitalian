@@ -5,7 +5,7 @@ module.exports = {
   description: 'Search!',
   execute(msg, args) {
 
-    var replyStr = 'Words found:  ';
+    var replyStr = 'Words found:  \n';
 
 
     var allWords = [];
@@ -21,28 +21,28 @@ module.exports = {
           input: fs.createReadStream('words.txt')
       });
       
-      let line_no = 0;
+      //let line_no = 0;
       
+      var prfx = args[0];
       // event is emitted after each line
       rl.on('line', function(line) {
-          line_no++;
-          console.log(line);
+          //line_no++;
+          //console.log(line);
           allWords.push(line);
-          var prfx = args[0];
-          console.log('prfx = '+prfx);
+          //console.log('prfx = '+prfx);
           var done= false;
-          line.split('=').forEach((str) => {console.log('prfx check detected');
+          var splitLn = line.split('=');
+          var lang = 'English';
+          splitLn.forEach((str) => {console.log('prfx check detected');
             if(str.startsWith(prfx)){console.log('= detected');
-              console.log('replyStr = '+replyStr);
-              var word = str.replace('=', ' = ');
-              var lang = 'English';
-              if(line.split('=')[0]==line.split('=')[1]){
+              //console.log('replyStr = '+replyStr);
+              if(splitLn[0]==splitLn[1]){
                 lang = "English & Italian";
               }
-              else if(str == line.split('=')[0]) lang = 'Italian';
-              replyStr = replyStr + (' `' + word + '` (*'+lang+'*), ');
+              else if(str == splitLn[0]) lang = 'Italian';
+              replyStr += (' `' + str + '` (*'+lang+'*), ');
               done = true;
-              console.log('replyStr = '+replyStr);
+              //console.log('replyStr = '+replyStr);
             }
           });
           if(done) replyStr += '\n';
@@ -51,7 +51,7 @@ module.exports = {
       
       // end
       rl.on('close', function(line) {
-          console.log('Total lines : ' + line_no);
+          //console.log('Total lines : ' + line_no);
           if(replyStr.length < 14){
             msg.channel.send('No words found.');
           }else{
@@ -70,6 +70,7 @@ module.exports = {
         //});
     } catch (err) {
         console.error(err);
+        msg.channel.reply("**`/!\\`**Error: "+err.name);
     }
   },
 };
