@@ -27,7 +27,7 @@ module.exports = {
 
 
     var words = [];
-    const prefix = args[0];
+    const prefix = args;
 
     for(word in allWords){
       if(word.includes('=')){
