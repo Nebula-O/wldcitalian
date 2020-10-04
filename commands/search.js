@@ -56,6 +56,11 @@ module.exports = {
         //lines.forEach((line) => {// do something with each line
           //allWords.push(line);
         //});
+      if(replyStr.length < 14){
+        msg.channel.send('No words found.');
+      }else{
+        msg.channel.send(replyStr);
+      }
     } catch (err) {
         console.error(err);
     }
@@ -65,11 +70,7 @@ module.exports = {
     var words = [];
     var prfx = args[0];
     
-    if(replyStr.length < 14){
-      msg.channel.send('No words found.');
-    }else{
-      msg.channel.send(replyStr);
-    }
+    
 
   },
 };
