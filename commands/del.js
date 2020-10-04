@@ -11,7 +11,7 @@ module.exports = {
             fs.unlinkSync(path)
             //file removed
             //fresh file made
-            fs.writeFileSync('words.txt');
+            fs.writeFileSync('words.txt','');
         } catch(err) {
             console.error(err)
         }
