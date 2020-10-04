@@ -4,6 +4,7 @@ module.exports = {
   Save: require('./save'),
   List: require('./list'),
   TMI: require('./testmyitalian'),
+  TME: require('./testmyenglish'),
   Search: require('./search'),
   Random: require('./random'),
   Itl: require('./getitl'),

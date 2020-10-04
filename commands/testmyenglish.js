@@ -1,5 +1,5 @@
 module.exports = {
-    name: '.tmi',
+    name: '.tme',
     description: 'Test on italian words!',
     execute(msg, args) {
         
@@ -15,7 +15,7 @@ module.exports = {
             lines.forEach((line) => {// do something with each line
                 if(line.length > 2){
                     lineRep = line.split('=');
-                    words = words.concat('\n**`'+lineRep[0]+'`** = ||'+lineRep[1]+"||");
+                    words = words.concat('\n||'+lineRep[0]+'|| = **`'+lineRep[1]+'`**');
                 }
             });
             msg.channel.send(words);
