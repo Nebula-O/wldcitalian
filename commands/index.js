@@ -12,6 +12,6 @@ module.exports = {
   Random: require('./random'),
   itl: require('./getitl'),
   eng: require('./geteng'),
-  Download: require('./downloadlist'),
+  download: require('./downloadlist'),
   Delete: require('./del'),
 };

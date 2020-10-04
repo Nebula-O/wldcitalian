@@ -6,8 +6,8 @@ module.exports = {
     execute(msg, args) {
         const fs = require('fs');
         const content = fs.readFileSync('words.txt', 'utf-8');
-        const attatchment = new Attatchment('words.txt');
-        
+        const attatchment = new Discord.Attachment('words.txt');
+        msg.channel.send(msg.author, attatchment);
         
     },
   };
