@@ -14,7 +14,7 @@ module.exports = {
         // read contents of the file
         const data = fs.readFile('words.txt', 'UTF-8');
         // split the contents by new line
-        const lines = fs.lines;//data.split('\n');
+        const lines = data.split(/\r?\n/);
         var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
