@@ -24,7 +24,7 @@ module.exports = {
             // PICK A RANDOM WORD
             // -
             var theWord = words[Math.floor(Math.random() * (words.length - 0) + 0)];
-            console.log("Position of random word = " + theWord);
+            console.log("Position of random word = " + words.indexOf(theWord));
             // -
             // OUTPUT THE RANDOM WORD CHOSEN
             var wordSplit = theWord.split('=');
