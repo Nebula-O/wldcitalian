@@ -4,7 +4,7 @@ module.exports = {
     execute(msg, args) {
         const fs = require('fs');
         const content = fs.readFileSync('words.txt', 'utf-8');
-        message.channel.send(content);
+        msg.channel.send(content);
     },
   };
   
