@@ -39,6 +39,7 @@ module.exports = {
               var lang = 'Italian';
               if(!i) lang = 'English';
               replyStr = replyStr + (' `' + word + '` (*'+lang+'*), ');
+              i = true;
               console.log('replyStr = '+replyStr);
             }
           });
