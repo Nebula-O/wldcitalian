@@ -29,11 +29,11 @@ module.exports = {
     var words;
     for(word in allWords){
 
-      if(word.split('=').get(0).startsWith(prefix)){
+      if(word.split('=')[0].startsWith(prefix)){
         words.add(word);
       }
 
-      else if(word.split('=').get(1).startsWith(prefix)){
+      else if(word.split('=')[1].startsWith(prefix)){
         words.add(word);
       }
 

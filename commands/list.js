@@ -1,8 +1,8 @@
 module.exports = {
-    name: '.itl',
-    description: 'Translate to italian',
+    name: '.list',
+    description: 'List words!',
     execute(msg, args) {
-
+        
         const fs = require('fs');
         try {
             // read contents of the file
@@ -10,18 +10,16 @@ module.exports = {
             // split the contents by new line
             const lines = data.split(/\r?\n/);
             var layout;
-            var word = args[0];
             // print all lines
+            var words = '__List of registered words__';
             lines.forEach((line) => {// do something with each line
-              layout = line.split('=');
-              if(layout[1].toLowerCase() === word.toLowerCase()){// if english form matches word then return italian equivalent
-                msg.channel.send(layout[0]);
-              }
+              words.concat('\n'+line);
             });
+            msg.channel.send(words);
         } catch (err) {
             console.error(err);
         }
-        msg.channel.send("- *Error*: "+word+" is not recognised as an english word. -");
+
     },
   };
   
