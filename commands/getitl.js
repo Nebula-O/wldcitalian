@@ -10,11 +10,12 @@ module.exports = {
             // split the contents by new line
             const lines = data.split(/\r?\n/);
             var layout;
+            var word = args[0];
             // print all lines
             lines.forEach((line) => {// do something with each line
               layout = line.split('=');
               if(layout.get(1).toLowerCase() === word.toLowerCase()){// if english form matches word then return italian equivalent
-                msg.channel.send(layout.get(0));
+                msg.channel.send(layout[0]);
               }
             });
         } catch (err) {
