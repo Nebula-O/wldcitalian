@@ -53,14 +53,12 @@ module.exports = {
     var words = [];
     var prfx = args[0];
 
-    for(var word in allWords){
-      word.split('=').forEach((str) => {
-        if(str.startsWith(prfx)){
-          //word = word.replaceAll('=', ' = ');
-          replyStr = replyStr.concat(' `' + word + '`, ');
-        }
-      });
-    }
+    allWords.forEach((str) => {
+      if(str.startsWith(prfx)){
+        //word = word.replaceAll('=', ' = ');
+        replyStr = replyStr.concat(' `' + word + '`, ');
+      }
+    });
     
     if(allWords.length < 1){
       msg.channel.send('No words found.');
