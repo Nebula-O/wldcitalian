@@ -11,11 +11,35 @@ module.exports = {
     var allWords = [];
     const fs = require('fs');
     try {
+
+      const readline = require('readline');
+      const fs = require('fs');
+      
+      // create instance of readline
+      // each instance is associated with single input stream
+      let rl = readline.createInterface({
+          input: fs.createReadStream('words.txt')
+      });
+      
+      let line_no = 0;
+      
+      // event is emitted after each line
+      rl.on('line', function(line) {
+          line_no++;
+          console.log(line);
+          allWords.push(line);
+      });
+      
+      // end
+      rl.on('close', function(line) {
+          console.log('Total lines : ' + line_no);
+      });
+
         // read contents of the file
-        const data = fs.readFile('words.txt', 'UTF-8');
+        //const data = fs.readFileSync('words.txt', 'UTF-8');
         // split the contents by new line
-        const lines = data.split(/\r?\n/);
-        var layout;
+        //const lines = data.split(/\r?\n/);
+        //var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
           allWords.push(line);
