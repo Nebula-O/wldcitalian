@@ -54,16 +54,12 @@ module.exports = {
     const prefix = args[0];
 
     for(var word in allWords){
-
-      if((word.split('=')[0]).startsWith(prefix)){
-        word = word.replaceAll('=', ' = ');
-        replyStr = replyStr.concat(' `' + word + '`, ');
-      }
-
-      else if(word.split('=')[1].startsWith(prefix)){
-        word = word.replaceAll('=', ' = ');
-        replyStr = replyStr.concat(' `' + word + '`, ');
-      }
+      var substrings = word.split('=').forEach((str) => {
+        if(str.startsWith(prefix)){
+          word = word.replaceAll('=', ' = ');
+          replyStr = replyStr.concat(' `' + word + '`, ');
+        }
+      });
     }
     
     if(allWords.length < 1){
