@@ -10,6 +10,8 @@ module.exports = {
         try {
             fs.unlinkSync(path)
             //file removed
+            //fresh file made
+            fs.writeFileSync('words.txt','UTF-8');
         } catch(err) {
             console.error(err)
         }
