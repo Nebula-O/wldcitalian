@@ -45,6 +45,11 @@ module.exports = {
       // end
       rl.on('close', function(line) {
           console.log('Total lines : ' + line_no);
+          if(replyStr.length < 14){
+            msg.channel.send('No words found.');
+          }else{
+            msg.channel.send(replyStr);
+          }
       });
 
         // read contents of the file
@@ -56,11 +61,6 @@ module.exports = {
         //lines.forEach((line) => {// do something with each line
           //allWords.push(line);
         //});
-      if(replyStr.length < 14){
-        msg.channel.send('No words found.');
-      }else{
-        msg.channel.send(replyStr);
-      }
     } catch (err) {
         console.error(err);
     }
