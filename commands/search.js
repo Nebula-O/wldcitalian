@@ -18,7 +18,7 @@ module.exports = {
         var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
-          if(line.length() > 1) {
+          if(line.includes('=')) {
             allWords.push(line);
           }
         });
