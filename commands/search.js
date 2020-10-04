@@ -28,6 +28,7 @@ module.exports = {
           line_no++;
           console.log(line);
           allWords.push(line);
+          var prfx = args[0];
 
           line.split('=').forEach((str) => {
             if(str.startsWith(prfx)){
