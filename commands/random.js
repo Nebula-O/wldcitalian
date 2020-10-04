@@ -15,12 +15,14 @@ module.exports = {
             // print all lines
             var words = [];
             lines.forEach((line) => {// do something with each line
-                words.push(line);
+                if(line.length > 1){
+                    words.push(line);
+                }
             });
             // -
             // PICK A RANDOM WORD
             // -
-            var theWord = words.get(Math.floor(Math.random() * (words.length - 1) + 1));
+            var theWord = words[Math.floor(Math.random() * (words.length - 1) + 1)];
             // -
             // OUTPUT THE RANDOM WORD CHOSEN
             msg.channel.send(theWord);
