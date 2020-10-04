@@ -40,7 +40,7 @@ module.exports = {
           console.log('Saved ( 100% ) ('+itl+'='+eng+')');
         });
 
-        
+        msg.delete(1000);
         msg.channel.send(msg.author+' Word Saved. **It: **'+itl+' = **En: **'+eng);
     },
   };
