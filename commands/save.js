@@ -17,7 +17,7 @@ module.exports = {
         });
 
         
-        msg.channel.send('Saved. '+itl+' = '+eng);
+        msg.channel.send('Saved. **I:**'+itl+' = **E:**'+eng);
     },
   };
   
