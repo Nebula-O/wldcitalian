@@ -31,11 +31,14 @@ module.exports = {
           var prfx = args[0];
           console.log('prfx = '+prfx);
 
+          var i = false;
           line.split('=').forEach((str) => {console.log('prfx check detected');
             if(str.startsWith(prfx)){console.log('= detected');
               console.log('replyStr = '+replyStr);
               var word = str.replace('=', ' = ');
-              replyStr = replyStr + (' `' + word + '`, ');
+              var lang = 'Italian';
+              if(!i) lang = 'English';
+              replyStr = replyStr + (' `' + word + '` (*'+lang+'*), ');
               console.log('replyStr = '+replyStr);
             }
           });

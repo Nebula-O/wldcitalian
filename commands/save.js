@@ -41,7 +41,7 @@ module.exports = {
         });
 
         
-        msg.channel.send('Saved. **It: **'+itl+' = **En: **'+eng);
+        msg.channel.send(msg.author+' Word Saved. **It: **'+itl+' = **En: **'+eng);
     },
   };
   
