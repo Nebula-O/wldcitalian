@@ -28,6 +28,14 @@ module.exports = {
           line_no++;
           console.log(line);
           allWords.push(line);
+
+          line.split('=').forEach((str) => {
+            if(str.startsWith(prfx)){
+              //word = word.replaceAll('=', ' = ');
+              replyStr = replyStr.concat(' `' + word + '`, ');
+            }
+          });
+
       });
       
       // end
@@ -52,15 +60,8 @@ module.exports = {
 
     var words = [];
     var prfx = args[0];
-
-    allWords.forEach((str) => {
-      if(str.startsWith(prfx)){
-        //word = word.replaceAll('=', ' = ');
-        replyStr = replyStr.concat(' `' + word + '`, ');
-      }
-    });
     
-    if(allWords.length < 1){
+    if(replyStr.length < 14){
       msg.channel.send('No words found.');
     }else{
       msg.channel.send(replyStr);
