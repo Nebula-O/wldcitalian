@@ -68,9 +68,16 @@ bot.on('message', msg => {
   console.info(`Called command: ${command}`);
 
   if (!bot.commands.has(command)) return;
+  else if(command != '.download') return;
 
   try {
-    bot.commands.get(command).execute(msg, args);
+    if(command != '.download'){
+      bot.commands.get(command).execute(msg, args);
+    } else {
+      const fs = require('fs');
+      const content = fs.readFileSync('words.txt', 'utf-8');
+      bot.client.sendFile(msg.channel, content, 'Words', 'Word List');
+    }
   } catch (error) {
     console.error(error);
     msg.reply('An error occured while trying to execute that command!');
