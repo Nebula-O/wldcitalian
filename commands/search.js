@@ -29,9 +29,10 @@ module.exports = {
           console.log(line);
           allWords.push(line);
           var prfx = args[0];
+          console.log('prfx = '+prfx);
 
-          line.split('=').forEach((str) => {
-            if(str.startsWith(prfx)){
+          line.split('=').forEach((str) => {console.log('prfx check detected');
+            if(str.startsWith(prfx)){console.log('= detected');
               var word = str.replace('=', ' = ');
               replyStr = replyStr.concat(' `' + word + '`, ');
             }
