@@ -7,7 +7,7 @@ module.exports = {
         try {
 
             var word = '';
-            for(var wd in words) {
+            for(var wd in args) {
                 word = word.concat(args[wd] + ' ');
             }
             if(word.endsWith(' ')){

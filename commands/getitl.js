@@ -11,10 +11,9 @@ module.exports = {
             const lines = data.split(/\r?\n/);
             var layout;
             
-            var words = args;
             var word = '';
-            for(var wd in words) {
-                word = word.concat(words[wd] + ' ');
+            for(var wd in args) {
+                word = word.concat(args[wd] + ' ');
             }
             if(word.endsWith(' ')){
                 word = word.substring(0, word.length - 1);
