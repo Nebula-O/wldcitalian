@@ -8,7 +8,7 @@ module.exports = {
     var replyStr = '';
 
 
-    var allWords;
+    var allWords = new Array();
     const fs = require('fs');
     try {
         // read contents of the file
