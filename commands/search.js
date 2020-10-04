@@ -1,12 +1,28 @@
+const { Message } = require("discord.js");
+
 module.exports = {
-  name: '.translate',
-  description: 'Translate something!',
+  name: '.search',
+  description: 'Search!',
   execute(msg, args) {
-    msg.channel.send('Translating...');
-    var googleTranslate = require('google-translate')(apiKey, options);
-    googleTranslate.translate('My name is Brandon', 'es', function(err, translation) {
-      console.log(translation.translatedText);
-      // =>  Mi nombre es Brandon
-    });
+
+    var replyStr = '';
+
+    var words;
+    for(word in getAllWords()){
+
+      if(word.split('=').get(0).startsWith(prefix)){
+        words.add(word);
+      }
+      
+      else if(word.split('=').get(1).startsWith(prefix)){
+        words.add(word);
+      }
+
+    }
+    
+    for(word in words){
+      replyStr = replyStr.concat('\n' + word.replaceAll('=', ' = '));
+    }
+
   },
 };

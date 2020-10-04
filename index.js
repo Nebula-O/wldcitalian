@@ -76,3 +76,102 @@ bot.on('message', msg => {
     msg.reply('An error occured while trying to execute that command!');
   }
 });
+
+/*
+function saveWord(eng,itl) {
+  console.log('Saving word ( 0% ) ('+itl+'='+eng+') ...');
+  var fs = require('fs');
+  fs.appendFile('words.txt', itl+'='+eng+"\n", function (err) {
+    if (err) throw err;
+    console.log('Saved ( 100% ) ('+itl+'='+eng+')');
+  });
+}
+
+function getAllWords() {// ITALIAN = ENGLISH
+  const fs = require('fs');
+  try {
+      // read contents of the file
+      const data = fs.readFileSync('words.txt', 'UTF-8');
+      // split the contents by new line
+      const lines = data.split(/\r?\n/);
+      var layout;
+      // print all lines
+      var words;
+      lines.forEach((line) => {// do something with each line
+        words.add(line);
+      });
+      return words;
+  } catch (err) {
+      console.error(err);
+  }
+}
+
+function getITLWordsStartingWith(prefix){
+  var words;
+  for(word in getAllWords()){
+    if(word.split('=').get(0).startsWith(prefix)){
+      words.add(word);
+    }
+  }return words;
+}
+function getENGWordsStartingWith(prefix){
+  var words;
+  for(word in getAllWords()){
+    if(word.split('=').get(1).startsWith(prefix)){
+      words.add(word);
+    }
+  }return word;
+}
+
+function getItlFor(word){// word is english
+  const fs = require('fs');
+  try {
+      // read contents of the file
+      const data = fs.readFileSync('words.txt', 'UTF-8');
+      // split the contents by new line
+      const lines = data.split(/\r?\n/);
+      var layout;
+      // print all lines
+      lines.forEach((line) => {// do something with each line
+        layout = line.split('=');
+        if(layout.get(1).toLowerCase() === word.toLowerCase()){// if english form matches word then return italian equivalent
+          return layout.get(0);
+        }
+      });
+  } catch (err) {
+      console.error(err);
+  }
+  return "- *Error*: "+word+" is not recognised. -";
+}
+
+function getEngFor(word){// word is italian
+  const fs = require('fs');
+  try {
+      // read contents of the file
+      const data = fs.readFileSync('words.txt', 'UTF-8');
+      // split the contents by new line
+      const lines = data.split(/\r?\n/);
+      var layout;
+      // print all lines
+      lines.forEach((line) => {// do something with each line
+        layout = line.split('=');
+        if(layout.get(0).toLowerCase() === word.toLowerCase()){
+          return layout.get(0);
+        }
+      });
+  } catch (err) {
+      console.error(err);
+  }
+  return "- Error: "+word+" is not recognised.";
+}
+
+function getRandomWord(){
+  const theWords = getAllWords();
+  return theWords.get(getRandomNumberBetween(1, theWords.length()));
+}
+
+function getRandomNumberBetween(min, max) {  
+  return Math.floor(
+    Math.random() * (max - min) + min
+  )
+}*/
