@@ -14,7 +14,7 @@ module.exports = {
             var words = args;
             var word = '';
             for(var wd in words) {
-                word = word.concat(wd + ' ');
+                word = word.concat(words[wd] + ' ');
             }
             if(word.endsWith(' ')){
                 word = word.substring(0, word.length - 1);
