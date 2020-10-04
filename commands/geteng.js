@@ -9,10 +9,10 @@ module.exports = {
             var words = args;
             var word = '';
             for(var wd in words) {
-                word.concat(wd + ' ');
+                word = word.concat(wd + ' ');
             }
-            if(w.endsWith(' ')){
-                w = w.substring(0, w.length - 1);
+            if(word.endsWith(' ')){
+                word = word.substring(0, word.length - 1);
             }
 
             // read contents of the file
