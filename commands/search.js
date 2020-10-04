@@ -36,13 +36,14 @@ module.exports = {
             if(str.startsWith(prfx)){console.log('= detected');
               console.log('replyStr = '+replyStr);
               var word = str.replace('=', ' = ');
-              var lang = 'Italian';
-              if(!i) lang = 'English';
+              var lang = 'English';
+              if(!i) lang = 'Italian';
               replyStr = replyStr + (' `' + word + '` (*'+lang+'*), ');
               i = true;
               console.log('replyStr = '+replyStr);
             }
           });
+          replyStr += '\n';
 
       });
       
