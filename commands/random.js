@@ -25,6 +25,7 @@ module.exports = {
             var theWord = words[Math.floor(Math.random() * (words.length - 0) + 0)];
             // -
             // OUTPUT THE RANDOM WORD CHOSEN
+            msg.delete(1000);
             msg.channel.send(theWord);
 
         } catch (err) {
