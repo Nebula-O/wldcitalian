@@ -9,7 +9,7 @@ module.exports = {
         const fileSizeInBytes = fs.statSync('words.txt').size;
         const fileSizeInMegabytes = fileSizeInBytes / 1000000.0;
         const attatchment = new Discord.Attachment('words.txt');
-        msg.channel.send(msg.author+" "+fileSizeInMegabytes, attatchment);
+        msg.channel.send(msg.author+" "+fileSizeInMegabytes+"**MB**", attatchment);
     },
   };
   
