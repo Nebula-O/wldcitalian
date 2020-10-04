@@ -12,9 +12,9 @@ module.exports = {
     const fs = require('fs');
     try {
         // read contents of the file
-        const data = fs.readFileSync('words.txt', 'UTF-8');
+        const data = fs.readFile('words.txt', 'UTF-8');
         // split the contents by new line
-        const lines = data.split('\n');
+        const lines = fs.lines;//data.split('\n');
         var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
