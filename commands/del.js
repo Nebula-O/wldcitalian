@@ -13,7 +13,7 @@ module.exports = {
             //fresh file made
             fs.appendFile('words.txt', "", function (err) {
                 if (err) throw err;
-                console.log('Saved new file ( 100% ) ('+itl+'='+eng+')');
+                console.log('Saved new file ( 100% )');
             });
         } catch(err) {
             console.error(err)
