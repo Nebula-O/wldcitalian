@@ -32,20 +32,25 @@ module.exports = {
     const prefix = args[0];
 
     for(word in allWords){
+      if(word.includes('=')){
+        if(word.split('=')[0].startsWith(prefix)){
+          words.add(word);
+        }
 
-      if(word.split('=')[0].startsWith(prefix)){
-        words.add(word);
-      }
-
-      else if(word.split('=')[1].startsWith(prefix)){
-        words.add(word);
+        else if(word.split('=')[1].startsWith(prefix)){
+          words.add(word);
+        }
       }
     }
     
     for(word in words){
       replyStr = replyStr.concat('\n' + word.replaceAll('=', ' = '));
     }
-    msg.channel.send(replyStr);
+    if(allWords.length < 1){
+      msg.channel.send('No words found.');
+    }else{
+      msg.channel.send(replyStr);
+    }
 
   },
 };
