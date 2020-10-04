@@ -11,7 +11,10 @@ module.exports = {
             fs.unlinkSync(path)
             //file removed
             //fresh file made
-            fs.writeFileSync('words.txt','');
+            fs.appendFile('words.txt', "", function (err) {
+                if (err) throw err;
+                console.log('Saved new file ( 100% ) ('+itl+'='+eng+')');
+            });
         } catch(err) {
             console.error(err)
         }
