@@ -67,8 +67,8 @@ bot.on('message', msg => {
   const command = args.shift().toLowerCase();
   console.info(`Called command: ${command}`);
 
-  if (!bot.commands.has(command)) return;
-  else if(command != '.download') return;
+  if (!bot.commands.has(command)){ return;
+  }else if(command != '.download') return;
 
   try {
     if(command != '.download'){
@@ -77,7 +77,7 @@ bot.on('message', msg => {
       const fs = require('fs');
       const content = fs.readFileSync('words.txt', 'utf-8');
       const attatchment = new Discord.Attachment('words.txt');
-      msg.channel.sendFile("words.txt");
+      msg.channel.send(message.author, attatchment);
     }
   } catch (error) {
     console.error(error);
