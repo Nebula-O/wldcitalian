@@ -6,7 +6,15 @@ module.exports = {
         var words = args;
 
         var eng = words[0].split('=');
-        var itl = words[1];
+        var itl = '';
+        var i = 0;
+        words.forEach((word) => {
+            i++;
+            itl = itl.concat(word + ' ');
+        });
+        if(i > 1){
+            itl.replace(itl.lastIndexOf(' '), '');
+        }
 
         // SAVE WORD
         console.log('Saving word ( 0% ) ('+itl+'='+eng+') ...');
@@ -17,7 +25,7 @@ module.exports = {
         });
 
         
-        msg.channel.send('Saved. **I:**'+itl+' = **E:**'+eng);
+        msg.channel.send('Saved. **I: **'+itl+' = **E: **'+eng);
     },
   };
   
