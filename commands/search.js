@@ -20,7 +20,6 @@ module.exports = {
         lines.forEach((line) => {// do something with each line
           allWords.push(line);
         });
-        return words;
     } catch (err) {
         console.error(err);
     }
@@ -43,6 +42,7 @@ module.exports = {
     for(word in words){
       replyStr = replyStr.concat('\n' + word.replaceAll('=', ' = '));
     }
+    msg.channel.send(replyStr);
 
   },
 };

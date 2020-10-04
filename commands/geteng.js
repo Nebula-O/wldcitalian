@@ -14,7 +14,7 @@ module.exports = {
             // print all lines
             lines.forEach((line) => {// do something with each line
               layout = line.split('=');
-              if(layout.get(0).toLowerCase() === word.toLowerCase()){// if english form matches word then return italian equivalent
+              if(layout[0].toLowerCase() === word.toLowerCase()){// if english form matches word then return italian equivalent
                 msg.channel.send(layout[1]);
               }
             });
