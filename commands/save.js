@@ -5,8 +5,8 @@ module.exports = {
 
         var words = args;
 
-        var eng = words.get(0);
-        var itl = words.get(1);
+        var eng = words[0];
+        var itl = words[1];
 
         // SAVE WORD
         console.log('Saving word ( 0% ) ('+itl+'='+eng+') ...');

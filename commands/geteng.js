@@ -5,6 +5,7 @@ module.exports = {
 
         const fs = require('fs');
         try {
+            var word = args[0];
             // read contents of the file
             const data = fs.readFileSync('words.txt', 'UTF-8');
             // split the contents by new line
