@@ -1,4 +1,4 @@
-const { Client, Attatchment } = require('discord.js');
+const Discord = require('discord.js');
 
 module.exports = {
     name: '.download',
@@ -8,7 +8,6 @@ module.exports = {
         const content = fs.readFileSync('words.txt', 'utf-8');
         const attatchment = new Discord.Attachment('words.txt');
         msg.channel.send(msg.author, attatchment);
-        
     },
   };
   
