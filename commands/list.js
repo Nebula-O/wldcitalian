@@ -13,7 +13,7 @@ module.exports = {
             // print all lines
             var words = '__List of registered words__';
             lines.forEach((line) => {// do something with each line
-              words.concat('\n'+line);
+              words = words.concat('\n'+line);
             });
             msg.channel.send(words);
         } catch (err) {

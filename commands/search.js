@@ -27,6 +27,8 @@ module.exports = {
 
 
     var words;
+    const prefix = args[0];
+    
     for(word in allWords){
 
       if(word.split('=')[0].startsWith(prefix)){
