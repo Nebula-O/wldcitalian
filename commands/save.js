@@ -3,7 +3,7 @@ module.exports = {
     description: 'Save a word!',
     execute(msg, args) {
 
-        var words = args.split('=');
+        var words = args;
 
         var eng = words.get(0);
         var itl = words.get(1);
