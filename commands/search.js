@@ -31,7 +31,7 @@ module.exports = {
 
           line.split('=').forEach((str) => {
             if(str.startsWith(prfx)){
-              var word = str.replaceAll('=', ' = ');
+              var word = str.replace('=', ' = ');
               replyStr = replyStr.concat(' `' + word + '`, ');
             }
           });
