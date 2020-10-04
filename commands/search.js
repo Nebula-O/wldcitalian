@@ -31,7 +31,7 @@ module.exports = {
 
     for(word in allWords){
 
-      if(word[0] != null){
+      if(word != null){
 
         if(word.split('=')[0].startsWith(prefix)){
           words.add(word);
