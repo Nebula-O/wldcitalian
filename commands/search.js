@@ -30,19 +30,19 @@ module.exports = {
           allWords.push(line);
           var prfx = args[0];
           console.log('prfx = '+prfx);
-
-          var i = false;
+          var done= false;
           line.split('=').forEach((str) => {console.log('prfx check detected');
             if(str.startsWith(prfx)){console.log('= detected');
               console.log('replyStr = '+replyStr);
               var word = str.replace('=', ' = ');
               var lang = 'English';
-              if(!i) lang = 'Italian';
+              if(str == line.split('=')[0]) lang = 'Italian';
               replyStr = replyStr + (' `' + word + '` (*'+lang+'*), ');
-              i = true;
+              done = true;
               console.log('replyStr = '+replyStr);
             }
           });
+          if(done) replyStr += '\n';
 
       });
       
