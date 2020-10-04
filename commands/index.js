@@ -10,7 +10,8 @@ module.exports = {
   TRE: require('./testrandomenglish'),
   Search: require('./search'),
   Random: require('./random'),
-  Itl: require('./getitl'),
-  Eng: require('./geteng'),
+  itl: require('./getitl'),
+  eng: require('./geteng'),
+  Download: require('./downloadlist'),
   Delete: require('./del'),
 };
