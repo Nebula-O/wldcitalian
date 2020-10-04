@@ -18,7 +18,9 @@ module.exports = {
         var layout;
         // print all lines
         lines.forEach((line) => {// do something with each line
-          allWords.push(line);
+          if(line.length > 1) {
+            allWords.push(line);
+          }
         });
     } catch (err) {
         console.error(err);
@@ -31,15 +33,12 @@ module.exports = {
 
     for(word in allWords){
 
-      if(word != null){
+      if(word.split('=')[0].startsWith(prefix)){
+        words.add(word);
+      }
 
-        if(word.split('=')[0].startsWith(prefix)){
-          words.add(word);
-        }
-
-        else if(word.split('=')[1].startsWith(prefix)){
-          words.add(word);
-        }
+      else if(word.split('=')[1].startsWith(prefix)){
+        words.add(word);
       }
     }
     
