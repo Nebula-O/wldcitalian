@@ -16,6 +16,10 @@ module.exports = {
         if(eng.startsWith(' ')){
             eng = eng.substring(1, w.length);
         }
+        if(itl.endsWith(' ')){
+            itl = itl.substring(0, itl.length - 1);
+        }
+        
 /*
         var eng = words[0].split('=');
         var itl = '';
