@@ -3,6 +3,7 @@ module.exports = {
   Help: require('./help'),
   Save: require('./save'),
   List: require('./list'),
+  Wordcount: require('./wordcount'),
   TMI: require('./testmyitalian'),
   TME: require('./testmyenglish'),
   TR: require('./testrandom'),
