@@ -29,9 +29,9 @@ module.exports = {
             var wordSplit = theWord.split('=');
 
             if(Math.floor(Math.random() * (1 - 0) + 0) > 0){
-                msg.channel.send('**||'+lineRep[0]+'||** = '+lineRep[1]+'`');
+                msg.channel.send('**||'+wordSplit[0]+'||** = '+wordSplit[1]+'`');
             } else {
-                msg.channel.send('`'+lineRep[0]+'` = **||'+lineRep[1]+'||**');
+                msg.channel.send('`'+wordSplit[0]+'` = **||'+wordSplit[1]+'||**');
             }
 
         } catch (err) {
