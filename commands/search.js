@@ -64,13 +64,5 @@ module.exports = {
     } catch (err) {
         console.error(err);
     }
-
-
-
-    var words = [];
-    var prfx = args[0];
-    
-    
-
   },
 };

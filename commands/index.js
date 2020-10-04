@@ -3,6 +3,7 @@ module.exports = {
   Help: require('./help'),
   Save: require('./save'),
   List: require('./list'),
+  TMI: require('./testmyitalian'),
   Search: require('./search'),
   Random: require('./random'),
   Itl: require('./getitl'),
