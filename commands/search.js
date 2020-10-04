@@ -42,6 +42,7 @@ module.exports = {
               else if(str == splitLn[0]) lang = 'Italian';
               replyStr += (' `' + str + '` (*'+lang+'*), ');
               done = true;
+              lang = 'English';
               //console.log('replyStr = '+replyStr);
             }
           });
@@ -60,6 +61,9 @@ module.exports = {
           else if((replyStr.length) <= 4000) {
             msg.channel.send(replyStr.substring(0, replyStr.length / 2));
             msg.channel.send(replyStr.substring((replyStr.length / 2) + 1, replyStr.length));
+          }
+          else{
+            msg.channel.reply("Sorry but there are too many results to display here! Please try narrowing your search down.");
           }
       });
 
