@@ -64,7 +64,6 @@ module.exports = {
           replyStr = replyStr.concat(' `' + word + '`, ');
         }
       }
-    }
     
     if(allWords.length < 1){
       msg.channel.send('No words found.');
