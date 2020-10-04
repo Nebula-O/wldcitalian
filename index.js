@@ -76,7 +76,7 @@ bot.on('message', msg => {
     } else {
       const fs = require('fs');
       const content = fs.readFileSync('words.txt', 'utf-8');
-      bot.client.sendFile(msg.channel, content, 'Words', 'Word List');
+      bot.sendFile(msg.channel, content, 'Words', 'Word List');
     }
   } catch (error) {
     console.error(error);
