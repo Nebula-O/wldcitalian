@@ -36,7 +36,10 @@ module.exports = {
               console.log('replyStr = '+replyStr);
               var word = str.replace('=', ' = ');
               var lang = 'English';
-              if((str == line.split('=')[0]) && (line.split('=')[0]!=line.split('=')[1])) lang = 'Italian';
+              if(line.split('=')[0]==line.split('=')[1]){
+                lang = "English & Italian";
+              }
+              else if(str == line.split('=')[0]) lang = 'Italian';
               replyStr = replyStr + (' `' + word + '` (*'+lang+'*), ');
               done = true;
               console.log('replyStr = '+replyStr);
